@@ -47,8 +47,8 @@ body {
 
 .navbar {
     pointer-events: auto;
-    height: 56px;
-    padding: 0 56px;
+    height: 76px;
+    padding: 0 76px;
     background: var(--glass);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -71,7 +71,7 @@ body {
 
 .nav-brand {
     font-weight: 900;
-    font-size: 1.7rem;
+    font-size: 1.9rem;
     letter-spacing: 0.10em;
     text-transform: uppercase;
     white-space: nowrap;
