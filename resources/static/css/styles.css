@@ -11,8 +11,8 @@
 :root {
     --bg: #050505;
     --bone: #ffffff;
-    --glass: rgba(10, 10, 10, 0.8);
-    --glass-border: rgba(255, 255, 255, 0.12);
+    --warm-white: #fffdf7;
+    --banner-text-color: #212121;
 
     --nav-height: 100px;
     --max-width: 1400px;
@@ -26,7 +26,7 @@
 /* ================= BODY ================= */
 body {
     background: var(--bg);
-    color: var(--bone);
+    color: var(--warm-white);
     font-family: var(--font-brand);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
@@ -35,7 +35,7 @@ body {
 /* ================= HEADER ================= */
 .site-header {
     position: fixed;
-    top: 20px;
+    top: 0px;
     left: 0;
     right: 0;
     z-index: 100;
@@ -47,26 +47,15 @@ body {
 
 .navbar {
     pointer-events: auto;
-    height: 76px;
-    padding: 0 76px;
-    background: var(--glass);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid var(--glass-border);
-    border-radius: 100px;
+    position: relative;
+    top: 0px;
+    height: 120px;
+    width: 100%;
+    background: var(--warm-white);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-                background 0.3s ease,
-                border-color 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.navbar:hover {
-    transform: scale(1.05);
-    background: --glass;
-    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 5px 10px 30px rgba(0,0,0,0.5);
 }
 
 .nav-brand {
@@ -75,6 +64,7 @@ body {
     letter-spacing: 0.10em;
     text-transform: uppercase;
     white-space: nowrap;
+    color: var(--banner-text-color);
 }
 
 /* ================= LAYOUT ================= */
@@ -126,7 +116,6 @@ body {
     text-decoration: none;
     font-family: var(--font-brand);
 
-    /* composed transform */
     --tx: 0px;
     --sx: 1;
 
@@ -177,10 +166,10 @@ body {
     z-index: 1;
     font-weight: 900;
     font-size: clamp(3.5rem, 8vw, 7rem);
-    color: var(--bone);
     text-transform: uppercase;
     line-height: 0.8;
     letter-spacing: -0.05em;
+    color: var(--warm-white);
 }
 
 /* ================= SIDES ================= */
