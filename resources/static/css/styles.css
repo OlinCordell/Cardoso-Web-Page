@@ -41,7 +41,6 @@ body {
 .navbar {
     pointer-events: auto;
     position: relative;
-    top: 0px;
     height: 120px;
     width: 100%;
     background: var(--warm-white);
@@ -52,12 +51,25 @@ body {
 }
 
 .nav-brand {
-    font-weight: 900;
-    font-size: 3.5rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 800;
+    font-size: 2.4rem;
+    line-height: 0.95;
+    letter-spacing: 0.15em;
+    text-transform: lowercase;
     white-space: nowrap;
     color: var(--banner-text-color);
+}
+
+.nav-brand span:first-child {
+    letter-spacing: 0.1em;
+    padding-left: 0.6em;
+}
+
+.nav-brand span:last-child {
+    letter-spacing: 0.1em;
 }
 
 .interactive-band {
@@ -138,34 +150,41 @@ body {
     z-index: 1;
 }
 
-.panel h1 {
+.panel-header {
     position: fixed;
     bottom: var(--space-lg);
     width: 50vw;
-    z-index: 2;
+    z-index: 3;
+    text-decoration: none;
+    color: inherit;
+}
+
+.panel-header h1 {
     font-weight: 900;
-    font-size: clamp(4rem, 10vw, 9rem);
-    text-transform: uppercase;
+    font-size: clamp(4rem, 7vw, 9rem);
     line-height: 0.8;
     letter-spacing: -0.05em;
     color: var(--warm-white);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.8s ease;
 }
 
-.panel-left h1 { left: 0; padding-left: var(--space-lg); text-align: left; }
-.panel-right h1 { right: 0; padding-right: var(--space-lg); text-align: right; }
+.panel-header-left {
+    left: 0;
+    padding-left: var(--space-lg);
+    text-align: left;
+}
+
+.panel-header-right {
+    right: 0;
+    padding-right: var(--space-lg);
+    text-align: right;
+}
 
 @media (hover: hover) and (pointer: fine) {
-    .panel-left:hover, .panel-right:hover {
+    .panel-left:hover,
+    .panel-right:hover {
         opacity: 1;
         width: 100%;
         z-index: 10;
-    }
-
-    .panel:hover h1 {
-        opacity: 1;
     }
 
     .panel-overlay:has(.panel-left:hover) .panel-right {
@@ -176,6 +195,14 @@ body {
     .panel-overlay:has(.panel-right:hover) .panel-left {
         width: 0%;
         opacity: 0;
+    }
+
+    .panel-overlay:has(.panel-left:hover) .panel-header-left {
+        z-index: 11;
+    }
+
+    .panel-overlay:has(.panel-right:hover) .panel-header-right {
+        z-index: 11;
     }
 }
 
@@ -195,11 +222,15 @@ body {
         height: 100vh;
     }
 
-    .panel h1 {
+    .panel-header {
         position: absolute;
         width: 100%;
-        text-align: left;
         left: var(--space-md);
-        opacity: 1;
+        right: auto;
+        bottom: auto;
+    }
+
+    .panel-header h1 {
+        text-align: left;
     }
 }
