@@ -54,7 +54,7 @@ body {
 .nav-brand {
     font-weight: 900;
     font-size: 3.5rem;
-    letter-spacing: 0.00em;
+    letter-spacing: 0.5em;
     text-transform: uppercase;
     white-space: nowrap;
     color: var(--banner-text-color);
