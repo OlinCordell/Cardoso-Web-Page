@@ -28,7 +28,7 @@ body {
 
 .site-header {
     position: fixed;
-    top: 0px;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 100;
@@ -180,28 +180,30 @@ body {
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .panel-left:hover,
-    .panel-right:hover {
-        opacity: 1;
+    .panel-overlay.left-active .panel-left {
         width: 100%;
+        opacity: 1;
         z-index: 10;
     }
 
-    .panel-overlay:has(.panel-left:hover) .panel-right {
+    .panel-overlay.left-active .panel-right {
         width: 0%;
         opacity: 0;
     }
 
-    .panel-overlay:has(.panel-right:hover) .panel-left {
+    .panel-overlay.right-active .panel-right {
+        width: 100%;
+        opacity: 1;
+        z-index: 10;
+    }
+
+    .panel-overlay.right-active .panel-left {
         width: 0%;
         opacity: 0;
     }
 
-    .panel-overlay:has(.panel-left:hover) .panel-header-left {
-        z-index: 11;
-    }
-
-    .panel-overlay:has(.panel-right:hover) .panel-header-right {
+    .panel-overlay.left-active .panel-header-left,
+    .panel-overlay.right-active .panel-header-right {
         z-index: 11;
     }
 }
