@@ -63,9 +63,12 @@ body {
     color: var(--banner-text-color);
 }
 
+.nav-brand .highlight {
+    color: #cc5500;
+}
+
 .nav-brand span:first-child {
     letter-spacing: 0.1em;
-    padding-left: 0.6em;
 }
 
 .nav-brand span:last-child {
