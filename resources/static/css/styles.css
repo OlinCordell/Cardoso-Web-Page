@@ -69,10 +69,12 @@ body {
 
 .nav-brand span:first-child {
     letter-spacing: 0.1em;
+    transform: translateX(-0.95em);
 }
 
 .nav-brand span:last-child {
     letter-spacing: 0.1em;
+    transform: translateX(1.6em);
 }
 
 .interactive-band {
