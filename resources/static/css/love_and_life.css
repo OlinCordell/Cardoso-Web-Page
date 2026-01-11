@@ -1,0 +1,179 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --warm-white: #fffdf7;
+    --ink: #1f1f1f;
+    --accent: #cc5500;
+    --space-lg: 80px;
+    --space-md: 48px;
+    --font: 'Montserrat', sans-serif;
+}
+
+body {
+    background: var(--warm-white);
+    font-family: var(--font);
+    color: var(--ink);
+    overflow-x: hidden;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.navbar {
+    pointer-events: auto;
+    width: 100%;
+    background: var(--warm-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    flex-direction: column;
+    font-weight: 800;
+    font-size: 2.4rem;
+    line-height: 0.95;
+    letter-spacing: 0.15em;
+    text-transform: lowercase;
+}
+
+.nav-brand .highlight {
+    color: var(--accent);
+}
+
+.nav-brand span:first-child {
+    letter-spacing: 0.1em;
+    transform: translateX(-0.95em);
+}
+
+.nav-brand span:last-child {
+    letter-spacing: 0.1em;
+    transform: translateX(1.6em);
+}
+
+.love-life {
+    padding-top: 160px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.grid {
+    width: 100%;
+    max-width: 1400px;
+    padding: var(--space-lg);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+}
+
+.panel {
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    padding: var(--space-md);
+}
+
+.panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+    z-index: 1;
+}
+
+.panel h1 {
+    position: absolute;
+    font-size: clamp(3rem, 4vw, 5rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    z-index: 2;
+    color: var(--warm-white);
+    padding: 10px;
+}
+
+.family,
+.celebration {
+    aspect-ratio: 4 / 3;
+}
+
+.family {
+    background-image: url("/resources/images/love-life/family.jpg");
+}
+
+.family h1 {
+    bottom: 0;
+    left: 0;
+}
+
+.celebration {
+    background-image: url("/resources/images/love-life/celebration.jpg");
+}
+
+.celebration h1 {
+    top: 0;
+    right: 0;
+    text-align: right;
+}
+
+.love,
+.life {
+    aspect-ratio: 3 / 4;
+}
+
+.love {
+    background-image: url("/resources/images/love-life/love.jpg");
+}
+
+.love h1 {
+    bottom: 0;
+    right: 0;
+    text-align: right;
+}
+
+.life {
+    background-image: url("/resources/images/love-life/life.jpg");
+}
+
+.life h1 {
+    top: 0;
+    left: 0;
+}
+
+.panel:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        padding: var(--space-md);
+    }
+
+    .panel {
+        aspect-ratio: auto;
+        height: 70vh;
+    }
+}

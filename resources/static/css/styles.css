@@ -158,7 +158,7 @@ body {
 .panel-header {
     position: fixed;
     bottom: var(--space-lg);
-    width: 25vw;
+    width: auto;
     z-index: 3;
     text-decoration: none;
     color: inherit;
@@ -173,18 +173,14 @@ body {
 }
 
 .panel-header-left {
-    left: 0;
-    padding-left: var(--space-lg);
+    left: var(--space-lg);
+    padding-left: 0;
     text-align: left;
 }
 
-.panel-header-left-highlight {
-    color: #cc5500;
-}
-
 .panel-header-right {
-    right: 0;
-    padding-right: var(--space-lg);
+    right: var(--space-lg);
+    padding-right: 0;
     text-align: right;
 }
 
@@ -243,5 +239,43 @@ body {
 
     .panel-header h1 {
         text-align: left;
+    }
+}
+
+.hover-hint {
+    position: fixed;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.hover-hint svg {
+    width: 100%;
+    height: 100%;
+}
+
+.hover-hint .trace {
+    fill: none;
+    stroke: rgba(255,253,247,0.85);
+    stroke-width: 2;
+    stroke-linecap: round;
+    animation: trace-split 2500ms ease-out forwards;
+}
+
+@keyframes trace-split {
+    0% {
+        stroke-dasharray: 0 1 0;
+        opacity: 1;
+    }
+    65% {
+        stroke-dasharray: 0.5 0 0.5;
+        opacity: 1;
+    }
+    85% {
+        stroke-dasharray: 0.5 0 0.5;
+        opacity: 1;
+    }
+    100% {
+        stroke-dasharray: 0.5 0 0.5;
+        opacity: 0;
     }
 }
