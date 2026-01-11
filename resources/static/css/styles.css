@@ -11,7 +11,7 @@
     --bone: #ffffff;
     --warm-white: #fffdf7;
     --banner-text-color: #212121;
-    --nav-height: 100px;
+    --nav-height: 120px;
     --max-width: 1400px;
     --space-md: 40px;
     --space-lg: 60px;
@@ -47,7 +47,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 5px 10px 30px rgba(0,0,0,0.5);
 }
 
 .nav-brand {
@@ -65,16 +64,6 @@ body {
 
 .nav-brand .highlight {
     color: #cc5500;
-}
-
-.nav-brand span:first-child {
-    letter-spacing: 0.1em;
-    transform: translateX(-0.95em);
-}
-
-.nav-brand span:last-child {
-    letter-spacing: 0.1em;
-    transform: translateX(1.6em);
 }
 
 .interactive-band {

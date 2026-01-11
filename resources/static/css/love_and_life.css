@@ -9,6 +9,7 @@
 :root {
     --warm-white: #fffdf7;
     --ink: #1f1f1f;
+    --banner-text-color: #212121;
     --accent: #cc5500;
     --space-lg: 80px;
     --space-md: 48px;
@@ -20,6 +21,7 @@ body {
     font-family: var(--font);
     color: var(--ink);
     overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .site-header {
@@ -36,6 +38,7 @@ body {
 
 .navbar {
     pointer-events: auto;
+    position: relative;
     width: 100%;
     background: var(--warm-white);
     display: flex;
@@ -45,30 +48,23 @@ body {
 
 .nav-brand {
     display: flex;
+    align-items: flex-start;
     flex-direction: column;
     font-weight: 800;
     font-size: 2.4rem;
     line-height: 0.95;
     letter-spacing: 0.15em;
     text-transform: lowercase;
+    white-space: nowrap;
+    color: var(--banner-text-color);
 }
 
 .nav-brand .highlight {
     color: var(--accent);
 }
 
-.nav-brand span:first-child {
-    letter-spacing: 0.1em;
-    transform: translateX(-0.95em);
-}
-
-.nav-brand span:last-child {
-    letter-spacing: 0.1em;
-    transform: translateX(1.6em);
-}
-
 .love-life {
-    padding-top: 160px;
+    padding-top: 140px;
     min-height: 100vh;
     display: flex;
     justify-content: center;

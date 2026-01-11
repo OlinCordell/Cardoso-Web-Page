@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --warm-white: #fffdf7;
+    --ink: #1f1f1f;
+    --banner-text-color: #212121;
+    --accent: #cc5500;
+    --space-lg: 80px;
+    --space-md: 48px;
+    --font: 'Montserrat', sans-serif;
+}
+
+body {
+    background: var(--warm-white);
+    font-family: var(--font);
+    color: var(--ink);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 120px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    background: var(--warm-white);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-brand {
+    display: flex;
+    flex-direction: column;
+    font-weight: 800;
+    font-size: 2.4rem;
+    line-height: 0.95;
+    letter-spacing: 0.15em;
+    text-transform: lowercase;
+    color: var(--banner-text-color);
+}
+
+.nav-brand .highlight {
+    color: var(--accent);
+}
+
+.music {
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.grid {
+    width: 100%;
+    max-width: 1400px;
+    padding: var(--space-lg);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-left: auto;
+    margin-right: auto;
+    justify-items: center;
+}
+
+.panel {
+    display: block;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    align-content: center;
+}
+
+.panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+}
+
+.landscape {
+    aspect-ratio: 4 / 3;
+    height: 65vh;
+    width: 80%;
+    background-image: url("/resources/images/music/music-landscape.jpg");
+}
+
+.vertical {
+    aspect-ratio: 3 / 4;
+    height: 80vh;
+    width: 40%;
+    background-image: url("/resources/images/music/music-vertical.jpg");
+}
+
+@media (max-width: 900px) {
+    .panel {
+        height: 60vh;
+    }
+
+    .grid {
+        padding: var(--space-md);
+        gap: var(--space-md);
+    }
+}
